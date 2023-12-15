@@ -9,7 +9,10 @@
 </head>
 
 <body>
-    <?PHP include('presset/header.php') ?>
+    <?PHP
+
+    session_start();
+    include('presset/header.php') ?>
 
     <div class="grayPart"></div>
 
@@ -30,10 +33,10 @@
             </div>
             <input type="password" name="password" id="password" placeholder="Mot de passe">
             <input type="password" name="repassword" id="repassword" placeholder="Confirmation du mot de passe">
-
-            <p id="questionConnexion">Déjà membre ? <a href="#connexion">Connexion</a></p>
-
             <input type="submit" value="Je crée mon compte">
+            <p id="questionConnexion">Déjà membre ? <a href="connexion.php">Connexion</a></p>
+
+
         </form>
     </div>
 
