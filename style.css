@@ -54,6 +54,7 @@
 
 #connexion {
     height: 62vh;
+    background-color: #FF99C8;
 }
 
 .formInscription form {
@@ -125,3 +126,309 @@ input {
         cursor: pointer;
     }
 }
+
+
+
+/* |||||||||||||||FOOTER|||||||||||||||||||- */
+
+.footer-partenaire {
+    background-color: #325C5C;
+    color: #fff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    height: 50vh;
+    margin-top: 5vh;
+}
+
+.footer-partenaire .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-partenaire h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.partenaires-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.partenaires-logos img {
+    max-width: 100px;
+    height: auto;
+}
+
+.footer-contact p,
+.footer-contact a {
+    margin: 5px 0;
+}
+
+.accueilCiel {
+    width: 100%;
+    height: 90vh;
+    background-image: url(images/fond4.png);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 6em;
+
+    & .partiGauche {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 40%;
+
+        & p {
+            font-size: 1.1em;
+            padding: .6em;
+        }
+
+        & button {
+            width: 150px;
+        }
+
+        & .zoneBlanche {
+            padding: 1em;
+            background-color: rgba(255, 255, 255, 0.76);
+        }
+
+    }
+
+}
+
+#btnProgramme {
+    padding: 1em;
+    background-color: #50B4C2;
+    color: white;
+    border: none;
+    border-radius: 30px;
+}
+
+
+
+@media (max-width: 768px) {
+    .partenaires-logos {
+        flex-direction: column;
+    }
+}
+
+
+/* //////////////////////////////// */
+
+.objectif-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.objectif-bar {
+    flex-grow: 1;
+    height: 0.35vw;
+    background-color: #325C5C;
+    position: relative;
+}
+
+.objectif-cercle {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 0.35vw solid #325C5C;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.objectif-text {
+    padding: 20px;
+    font-size: 3.2vw;
+    white-space: nowrap;
+    font-family: 'Krona one', serif;
+    padding: 3vw;
+    color: #325C5C;
+}
+
+#fondOrange {
+    background-color: #FFA857;
+}
+
+.objectifs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 2em;
+    padding-top: 0;
+
+    & .categorieObjectif {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#objectifCentral {
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    padding-left: 6em;
+    padding-right: 6em;
+}
+
+.programmePart {
+    width: 100%;
+    background-color: #FFA857;
+    height: auto;
+
+    & .container {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(20vw, auto);
+        margin-left: 10%;
+
+    }
+}
+
+
+
+
+
+.activity-card {
+    width: 17vw;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+    color: white;
+    font-family: 'Krona one', serif;
+}
+
+.activity-card .background-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: all .2s;
+
+    &:hover {
+        transform: scale(1.2);
+        transition: all .2s;
+    }
+}
+
+.container .activity-card:nth-of-type(3) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    border-radius: 39px;
+}
+
+.container .activity-card:nth-of-type(1) .start-time {
+    background-color: #ff6b57b2;
+}
+
+.container .activity-card:nth-of-type(2) .start-time {
+    background-color: #ff99c9aa;
+}
+
+.activity-card .start-time {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    background-color: rgba(255, 107, 87, 0.8);
+    padding: 15px;
+    border-radius: 15px 0 0 15px;
+}
+
+.centre {
+    text-align: center;
+}
+
+#voirProgramme {
+    background-color: #FF6B57;
+    border-radius: 100px 0;
+    width: 14em;
+    padding: 1.1em 2em;
+    border: none;
+    margin: 4em;
+
+
+}
+
+#voirProgramme a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+/* /////////////////////////////// */
+
+
+.infoMap {
+    background-color: #325C5C;
+    padding: 2em;
+    width: 45%;
+    margin-right: 0;
+    border-radius: 25px 0 0 25px;
+}
+
+#map-container {
+    padding: 0;
+    width: 45%;
+    height: 400px;
+    resize: both;
+    overflow: auto;
+    margin-right: 4em;
+    border-radius: 15px;
+    border: none;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.contenairMap {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
+.titreMap {
+    font-family: 'Krona one', serif;
+    font-size: 22px;
+}
+
+.titreMap:nth-of-type(1) {
+    color: #FF6B57;
+}
+
+.titreMap:nth-of-type(2) {
+    color: #FFA857;
+}
+
+.titreMap:nth-of-type(3) {
+    color: #5FC0CE;
+}
+
+.texteMap {
+    padding: 10px;
+    padding-right: 70px;
+    margin-bottom: 30px;
+    font-size: 19px;
+    color: white;
+}
+
+/* /////////////////////////////// */

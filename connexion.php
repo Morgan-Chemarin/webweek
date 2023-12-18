@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Connexion réussie.";
                 $_SESSION['prenom'] = $prenom;
 
-                header("Location: moncompte.php");
+                header("Location: index.php");
                 exit;
             } else {
                 echo "Le mot de passe est incorrect.";
@@ -70,6 +70,10 @@ include('presset/header.php')
         </form>
     </div>
 
+
+    <?PHP
+    include('presset/footer.php');
+        ?>
 
 
 </body>

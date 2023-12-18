@@ -3,13 +3,10 @@ session_start();
 
 include('presset/header.php');
 
-if (isset($_SESSION['prenom'])) {
-    echo "Bonjour " . htmlspecialchars($_SESSION['prenom']) . "! <a href='deconnexion.php'>Se déconnecter</a>";
-} else {
-    header("Location: connexion.php");
-    exit;
-}
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +20,17 @@ if (isset($_SESSION['prenom'])) {
 
 <body>
 
+    <div class="grayPart"></div>
+
 </body>
 
 </html>
+<?PHP
+
+if (isset($_SESSION['prenom'])) {
+    echo "Bonjour " . htmlspecialchars($_SESSION['prenom']) . "! <a href='deconnexion.php'>Se déconnecter</a>";
+} else {
+    header("Location: connexion.php");
+    exit;
+}
+?>

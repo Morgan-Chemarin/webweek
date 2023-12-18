@@ -1,0 +1,58 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Krona one', serif;
+    }
+
+    .objectif-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .objectif-bar {
+        flex-grow: 1;
+        height: 4px;
+        background-color: #000;
+        position: relative;
+    }
+
+    .objectif-cercle {
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border: 4px solid #000;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .objectif-text {
+        padding: 20px;
+        font-size: 3.5vw;
+        white-space: nowrap;
+    }
+</style>
+</head>
+
+<body>
+    <div class="objectif-container">
+
+        <div class="objectif-text">
+            Objectifs de levenement
+        </div>
+        <div class="objectif-bar">
+            <div class="objectif-cercle"></div>
+        </div>
+
+    </div>
+
+
+
+</body>
