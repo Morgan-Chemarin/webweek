@@ -69,6 +69,12 @@
     color: white;
 }
 
+.h3 {
+    text-align: center;
+    font-family: 'Krona one', serif;
+    color: white;
+}
+
 input {
     padding: 1.1em 2em;
     margin: 1em 1.5em;
@@ -281,3 +287,222 @@ input {
 
 /* |||||||||||||||HIPPO|||||||||||||||||||- */
 
+
+.apresInscription {
+    display: flex;
+    margin: 5%;
+    margin-top: -50vh;
+    width: 70%;
+    margin-left: 15%;
+    padding: 2em;
+    border-radius: 100px 0px;
+    background-color: #FF6B57;
+    color:#fff;
+    text-align: center;
+    flex-direction: column;
+    height: 40vh;
+}
+#ligne {
+    display: flex;
+    flex-direction: column;
+}
+
+.apresInscription form input[type="submit"] {
+    margin-top: 2em;
+    width: 20%;
+    margin-left: 40%;
+    background-color: #F9B765;
+    border: none;
+    color: white;
+    padding: .9em 2em;
+    transition: all .2s;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all .2s;
+        cursor: pointer;
+    }
+}
+
+.apresInscription h1 {
+    margin-bottom: 1em; 
+}
+
+.apresInscription p {
+    margin-bottom: 1.5em; 
+}
+
+.apresInscription form select{
+    border-radius: 100px 0px;
+    width: 20%;
+    padding: .9em 2em;
+}
+
+/* |||||||||||||||Page2|||||||||||||||||||- */
+.titre h1 {
+    color: #325C5C;
+    text-align: center;
+}
+
+.titre h3 {
+    color: #325C5C; 
+    text-align: center;
+    font-family: 'Krona one', serif;
+}
+
+.titre {
+    display: flex;
+    margin: 5%;
+    margin-top: -60vh;
+    width: 70%;
+    margin-left: 15%;
+    padding: 2em;
+    color: #325C5C;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 100px 0px;
+    background-color: #feefd24a;
+}
+
+
+.evenement {
+    display: flex;
+    margin: 5%;
+    margin-top: -5vh;
+    width: 70%;
+    margin-left: 15%;
+    padding: 2em;
+    color:#325C5C;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 100px 0px;
+    background-color:#FEEFD2;
+    margin-bottom: 20%;
+}
+
+.titre2 h2 {
+    color:#325C5C;
+    text-align: center;
+    font-family: 'Krona one', serif;
+}
+
+.titre2 input[type="submit"] {
+    margin-top: 2em;
+    width: 20%;
+    margin-left: 40%;
+    border: none;
+    background-color:#FF6B57;
+    padding: .9em 2em;
+    transition: all .2s;
+    color:#fff;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all .2s;
+        cursor: pointer;
+    }
+
+}
+
+/* |||||||||||||||PageDons|||||||||||||||||||- */
+
+.objectif-txt > p {
+    padding: 20px;
+    font-size: 1.9vw;
+    white-space: nowrap;
+    font-family: 'Krona one', serif;
+    padding: 3vw;
+    color: #325C5C;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    margin: 0;
+    flex-direction: row;
+}
+
+.text-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.boxe {
+    color: #333;
+    text-align: left;
+}
+
+.image-container {
+    flex: 1;
+    padding: 10px;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.corp{
+    background-color: #96C3DC;
+
+}
+
+.squarezone {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+  }
+  
+  .square {
+    padding: 2%;
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+    background-color: white;
+    text-align:left;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333;
+    border-radius:20px;
+    font-size: 20px;
+  }
+
+#cercleBlanc {
+    background-color: #96C3DC;
+    border: 0.35vw solid #fff;
+  }
+
+  #texteBlanc {
+    color: #fff;
+  }
+
+  #barblanc {
+    background-color: #fff;
+  }
+
+.squareSpan {
+    padding-bottom: 1.1em;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    width: 30%;
+    text-align: center;
+}
+
+.carousel-slide {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
