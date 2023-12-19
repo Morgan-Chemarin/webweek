@@ -1,5 +1,5 @@
 <?PHP
-include "utilisateur.php";
+include "poo/utilisateur.php";
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         include('presset/option.php');
 
-        $stmt = $conn->prepare("SELECT password, prenom FROM utilisateurs WHERE mail = :mail");
+        $stmt = $conn->prepare("SELECT id_utilisateur, password, prenom FROM utilisateurs WHERE mail = :mail");
         $stmt->bindParam(':mail', $login_mail);
         $stmt->execute();
 
@@ -19,10 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             $hashed_password_from_db = $result['password'];
             $prenom = $result['prenom'];
+            $id = $result['id_utilisateur'];
 
             if (password_verify($login_mdp, $hashed_password_from_db)) {
                 echo "Connexion réussie.";
                 $_SESSION['prenom'] = $prenom;
+                $_SESSION['id_utilisateur'] = $id;
 
                 header("Location: index.php");
                 exit;

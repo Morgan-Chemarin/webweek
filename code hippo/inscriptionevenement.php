@@ -16,21 +16,29 @@
 
     <div class="grayPart"></div>
 
-    <div class="titre">
+    <div class="apresInscription">
 
-        <h1 class="h1">Vous êtes inscrit(e) !</h1>
-    </div>
-        <div class="evenement">
-        <p>Félicitations ! Vous êtes maintenant officiellement membre de notre communauté. 
-            Bienvenue dans votre espace personnel dédié. Nous sommes ravis de vous accueillir parmi nous. 
-            Profitez pleinement de tous les avantages réservés à nos membres inscrits.</p>
-        </div>
-        <div class="titre2">
-        <h2 class="h2">Un problème avec votre inscription ?</h2>
-        <input type="submit" value="GERER MON INSCRIPTON">
-        </div>
+        <h1 class="h1">Inscription - Ciel étoilé</h1>
+        <p>Vous êtes conviés à "Ciel Étoilé : Nouvel An sous les Lanternes", un événement festif au Puy-en-Velay qui s'adresse à tous les habitants, 
+            jeunes et moins jeunes, désireux de célébrer le passage à la nouvelle année d'une manière magique et mémorable.</p>
+
+        <form action="" method="post" id="ligne">
+            <div class="">
+                <label for="nombre">Nombre :</label>
+        <select id="nombre" name="nombre" required>
+            <option value="" disabled selected>Nombres de places</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+            </div>
         
-    
+            <input type="submit" value="Je m’inscrit  à l’évènement !">
+        </form>
+    </div>
 
     <?PHP
     include "utilisateur.php";

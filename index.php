@@ -142,7 +142,7 @@ include('presset/option.php');
 
     </div>
 
-    <?= include('presset/footer.php') ?>
+    <?PHP include('presset/footer.php') ?>
 
 
 

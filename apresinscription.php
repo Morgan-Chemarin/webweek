@@ -16,29 +16,21 @@
 
     <div class="grayPart"></div>
 
-    <div class="formInscription">
+    <div class="titre">
 
-        <h1 class="h1">Inscription</h1>
-
-        <form action="" method="post">
-            <div class="inputPair">
-                <input type="text" placeholder="Nom" id="nom" name="nom" required>
-                <input type="text" placeholder="Prenom" id="prenom" name="prenom" required>
-            </div>
-            <input type="email" placeholder="Email" id="mail" name="mail" required>
-            <div class="inputPair">
-                <input type="text" placeholder="Numéro de téléphone" id="numero" name="numero" required>
-                <input type="date" placeholder="Date de naissance" id="date_de_naissance" name="date_de_naissance"
-                    required>
-            </div>
-            <input type="password" name="password" id="password" placeholder="Mot de passe">
-            <input type="password" name="repassword" id="repassword" placeholder="Confirmation du mot de passe">
-            <input type="submit" value="Je crée mon compte">
-            <p id="questionConnexion">Déjà membre ? <a href="connexion.php">Connexion</a></p>
-
-
-        </form>
+        <h1 class="h1">Vous êtes inscrit(e) !</h1>
     </div>
+    <div class="evenement">
+        <p>Félicitations ! Vous êtes maintenant officiellement membre de notre communauté.
+            Bienvenue dans votre espace personnel dédié. Nous sommes ravis de vous accueillir parmi nous.
+            Profitez pleinement de tous les avantages réservés à nos membres inscrits.</p>
+    </div>
+    <div class="titre2">
+        <h2 class="h2">Un problème avec votre inscription ?</h2>
+        <input type="submit" value="GERER MON INSCRIPTON">
+    </div>
+
+
 
     <?PHP
     include "poo/utilisateur.php";
