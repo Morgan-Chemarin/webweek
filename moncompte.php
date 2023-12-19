@@ -21,6 +21,12 @@ include('presset/header.php');
 <body>
 
     <div class="grayPart"></div>
+    <div class="formInscription">
+
+        <h1 class="h1">Mon compte</h1>
+
+        <p>Changer de mot de passe</p>
+    </div>
 
 </body>
 
