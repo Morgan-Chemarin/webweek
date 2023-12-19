@@ -13,8 +13,6 @@
 
     session_start();
     include('presset/header.php');
-
-    echo $_SESSION['id_utilisateur'];
     ?>
 
 
@@ -57,55 +55,36 @@
         echo "Vous n'etes pas connecté, pour se connecter : <a href='connexion.php'>connexion</a>";
     } ?>
 
-
-
     <?PHP
+
+    include('presset/footer.php');
     include "poo/soiree.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombre_de_place = $_POST["nombre"];
+        $id_utilisateur = $_SESSION['id_utilisateur'];
 
-      
         include('presset/option.php');
-        $stmt = $conn->prepare("SELECT * FROM inscrit WHERE id_utilisateur = :mail");
-        $stmt->bindParam(':mail', $mail);
+        $stmt = $conn->prepare("SELECT * FROM inscrit WHERE id_utilisateur = :id_utilisateur");
+        $stmt->bindParam(':id_utilisateur', $id_utilisateur);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
-            echo "L'adresse mail est deja utilisé par un autre compte.";
-            return;
+            $error = "Vous vous êtes déjà inscrit, allez voir dans votre espace compte pour vérifier.";
+        } else {
+            $inscription_soiree = new Soiree($id_utilisateur, $nombre_de_place);
+            $inscription_soiree->enregistrer();
+            header('Location: apresinscription.php');
+            exit;
         }
 
-        $mdp_hash = password_hash($password, PASSWORD_DEFAULT);
-
-
-        $utilisateur = new Utilisateur($nom, $prenom, $mail, $numero, $date_de_naissance, $mdp_hash);
-        $utilisateur->afficher();
-
     }
-    ?>
 
-
-
-    <?PHP
-
-    include('presset/footer.php');
+    if (!empty($error)) {
+        echo "<script>alert(" . json_encode($error) . "); </script>";
+    }
 
     ?>
-
 </body>
 
 </html>
-
-
-<!-- 
-
-
-`
-        
-        
-        
-
-        
-        
-    ` -->
