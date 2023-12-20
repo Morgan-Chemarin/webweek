@@ -1,0 +1,66 @@
+body {
+  font-family: Arial;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.box{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#one {
+  border-radius: 200px 200px 0px 200px;
+  background: #5FC0CE;
+}
+
+#two {
+  background: #FFA857;
+}
+
+#three {
+  border-radius: 200px 200px 0px 200px;
+  background: #FF6B57;
+}
+
+#four {
+  border-radius: 200px;
+  background: #FF99C8;
+}
+
+#five {
+  background: #5FC0CE;
+}
+
+#six {
+  background: #FFA857;
+  border-radius: 0px 200px 200px 200px;
+}
+
+#seven {
+  border-radius: 200px;
+  background: #FF6B57;
+}
+
+#eight{
+  background: #FF99C8;
+}
+
+.container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.margetext {
+  padding: 30px;
+}
