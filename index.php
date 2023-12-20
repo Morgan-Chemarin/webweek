@@ -19,7 +19,7 @@ include('presset/option.php');
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="script/script.js"></script>
+    <script src="script/map.js"></script>
 </head>
 
 <body>

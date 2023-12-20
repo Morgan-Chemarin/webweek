@@ -16,6 +16,9 @@ include('presset/header.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon compte</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script/scriptAjax.js"></script>
+
 </head>
 
 <body>
@@ -30,36 +33,139 @@ include('presset/header.php');
         <button class="tablinks" onclick="openTab(event, 'Personnel')">Paramètres du profil</button>
         <button class="tablinks" onclick="openTab(event, 'Securite')">Mot de passe & sécurité</button>
     </div>
+
+    <!-- Premier onglet -->
+    <?PHP
+    include('presset/option.php');
+
+    try {
+        $stmt = $conn->prepare("SELECT nom, prenom, mail, numero, date_de_naissance FROM utilisateurs WHERE id_utilisateur = ?");
+        $stmt->execute([$_SESSION['id_utilisateur']]);
+        $donnees = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    } catch (PDOException $e) {
+
+    }
+
+
+
+    ?>
     <div id="Personnel" class="tabcontent">
         <h3 class="titreTabcontent">Modification des informations personnelles</h3>
-        <form>
+        <form id="updateUserForm">
             <div class="form-group">
                 <label for="nom">Nom</label>
-                <input type="text" id="nom">
+                <input type="text" id="nom" name="nom" value="<?PHP echo htmlspecialchars($donnees['nom']); ?>">
             </div>
             <div class="form-group">
                 <label for="prenom">Prénom</label>
-                <input type="text" id="prenom">
+                <input type="text" id="prenom" name="prenom"
+                    value="<?PHP echo htmlspecialchars($donnees['prenom']); ?>">
             </div>
             <div class="form-group">
                 <label for="prenom">Email</label>
-                <input type="text" id="prenom">
+                <input type="text" id="mail" name="mail" value="<?PHP echo htmlspecialchars($donnees['mail']); ?>">
             </div>
             <div class="form-group">
                 <label for="prenom">Numéro de téléphone</label>
-                <input type="text" id="prenom">
+                <input type="text" id="numero" name="numero"
+                    value="<?PHP echo htmlspecialchars($donnees['numero']); ?>">
             </div>
             <div class="form-group">
                 <label for="prenom">Date de naissance</label>
-                <input type="text" id="prenom">
+                <input type="text" id="date_de_naissance" name="date_de_naissance"
+                    value="<?PHP echo htmlspecialchars($donnees['date_de_naissance']); ?>">
             </div>
-            <!-- Répétez pour les autres champs -->
         </form>
 
+        <div class="btnContainerCompte">
+            <button id="registerData">Enregistrer les modifications</button>
+            <button id="deconnexionAccount">Se deconnecter</button>
+            <button id="deleteAccount">Supprimer mon compte</a></button>
+        </div>
+
+
     </div>
+
+    <!-- deuxieme onglets -->
     <div id="Securite" class="tabcontent">
         <h3 class="titreTabcontent">Changer de mot de passe</h3>
+        <form id="updatePasswordForm">
+            <div class="form-mdp">
+                <label for="nom">Ancien mot de passe</label>
+                <input type="text" id="ancienmdp" name="ancienmdp" required>
+            </div>
+            <div class="form-mdp">
+                <label for="prenom">Nouveau mot de passe</label>
+                <input type="text" id="mdp" name="mdp" required>
+            </div>
+            <div class="form-mdp">
+                <label for="prenom">Conformation du mot de passe</label>
+                <input type="text" id="remdp" name="remdp" required>
+            </div>
+        </form>
+
+        <div class="btnContainerCompte">
+            <button type="button" id="updateMdp">Enregistrer le nouveau mot de passe</button>
+        </div>
     </div>
+
+
+
+   
+
+
+
+    <?PHP
+    try {
+
+        $stmt = $conn->prepare("SELECT nombre_de_place FROM inscrit WHERE id_utilisateur = :id_utilisateur");
+        $stmt->bindParam(':id_utilisateur', $_SESSION['id_utilisateur']);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+            echo "
+            <div class='objectif-container'>
+            <div class='objectif-text'>
+                Réservation à l’évènement
+            </div>
+            <div class='objectif-bar'>
+                <div class='objectif-cercle'></div>
+            </div>
+        </div>
+            <div class='reservationContenaire'>
+            <h3>Vous êtes bien inscrit(s) pour l’évènement Ciel étoilé ! </h3>
+            <p>Laissez-vous emporter par la féérie du Nouvel An à la Salle Jeanne d'Arc, située au cœur du Puy-en-Velay.
+                Réservez votre soirée du 31 décembre dès 19h et plongez dans une ambiance unique. Pour cette soirée
+                d'exception, adoptez le thème chic qui ajoutera une note d'élégance à votre réveillon. </p>
+            <div id='place'>
+                <label for=''>Nombre de place réservé</label>
+                <input type='number' name='' id='' value='". $result['nombre_de_place'] ."' readonly>
+            </div>
+    
+            <div class='divCancel'>
+                <button id='cancelReservation'>J’annule ma réservation</button>
+            </div>
+        </div>";
+
+
+
+        }
+
+
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+
+    ?>
+
+
+
+
+
 
     <?PHP include('presset/footer.php') ?>
 
@@ -89,14 +195,11 @@ include('presset/header.php');
 </html>
 <?PHP
 
-if (isset($_SESSION['prenom'])) {
-    echo "Bonjour " . htmlspecialchars($_SESSION['prenom']) . "! <a href='deconnexion.php'>Se déconnecter</a>";
-} else {
+if (!isset($_SESSION['prenom'])) {
     header("Location: connexion.php");
     exit;
 }
 ?>
-
 
 <?PHP
 include('presset/option.php');

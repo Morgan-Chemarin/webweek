@@ -13,5 +13,7 @@ if (ini_get("session.use_cookies")) {
 
 session_destroy();
 
+echo json_encode(['status' => 'success']);
+
 header("Location: connexion.php");
 exit;

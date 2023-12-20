@@ -633,7 +633,7 @@ input {
     padding: 5em;
     border-radius: 0px 0px 70px 0px;
     background-color: #ffffff;
-    height: 90vh;
+    height: auto;
 }
 
 .titreTabcontent {
@@ -654,7 +654,7 @@ input {
 }
 
 .form-group label {
-    min-width: 450px;
+    min-width: 20vw;
     font-size: 19px;
     color: #FFA857;
     font-family: 'Krona one', serif;
@@ -663,4 +663,388 @@ input {
 .form-group input {
     border: solid 2px #FFA857;
     flex: 1;
+}
+
+.form-mdp {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.form-mdp label {
+    min-width: 25vw;
+    font-size: 19px;
+    color: #FFA857;
+    font-family: 'Krona one', serif;
+}
+
+.form-mdp input {
+    border: solid 2px #FFA857;
+    flex: 1;
+}
+
+
+/* |||||||||||||||PageDons|||||||||||||||||||- */
+
+.objectif-txt>p {
+    padding: 20px;
+    font-size: 1.9vw;
+    white-space: nowrap;
+    font-family: 'Krona one', serif;
+    padding: 3vw;
+    color: #325C5C;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin-left: 15%;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    flex-direction: row;
+    margin-bottom: 10vh;
+}
+
+.text-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.boxe {
+    color: #333;
+    text-align: left;
+    padding: 4em;
+}
+
+.image-container {
+    flex: 1;
+    padding: 10px;
+}
+
+.image {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.corp {
+    background-color: #96C3DC;
+
+}
+
+.squarezone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding-bottom: 6em;
+    padding-top: 3em;
+    flex-wrap: wrap;
+}
+
+.square {
+    padding: 2%;
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+    background-color: white;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+#cercleBlanc {
+    background-color: #96C3DC;
+    border: 0.35vw solid #fff;
+}
+
+#texteBlanc {
+    color: #fff;
+}
+
+#barblanc {
+    background-color: #fff;
+}
+
+.squareSpan {
+    padding-bottom: 1.1em;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    width: 30%;
+    text-align: center;
+}
+
+.carousel-slide {
+    display: none;
+}
+
+img {
+    height: auto;
+}
+
+.btnContainerCompte {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3em;
+}
+
+.btnContainerCompte #registerData {
+    font-size: 15px;
+    padding: 1em 2em;
+    background-color: #FFA857;
+    color: white;
+    border-radius: 100px 0;
+    font-weight: 700;
+    border: none;
+    transition: all .15s;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: all .15s;
+    }
+
+}
+
+
+.btnContainerCompte #deconnexionAccount {
+    font-size: 15px;
+    padding: 1em 2em;
+    background-color: #FFF;
+    color: #FF6B57;
+    border-radius: 100px 0;
+    font-weight: 700;
+    border: solid 4px #FF6B57;
+    transition: all .15s;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: all .15s;
+    }
+
+}
+
+.btnContainerCompte #deleteAccount {
+    font-size: 12px;
+    padding: 1em 2.3em;
+    background-color: #FF6B57;
+    font-weight: 700;
+    color: #FFF;
+    border-radius: 100px 0;
+    border: none;
+    transition: all .15s;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: all .15s;
+    }
+}
+
+.btnContainerCompte #updateMdp {
+    font-size: 15px;
+    padding: 1em 2em;
+    background-color: #FFA857;
+    color: white;
+    border-radius: 100px 0;
+    font-weight: 700;
+    border: none;
+    transition: all .15s;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: all .15s;
+    }
+}
+
+/* ANNULATION RESERVATION PAGE MON COMPTE  */
+
+.reservationContenaire {
+    border-top: none;
+    width: 70%;
+    margin-left: 15%;
+    padding: 5em;
+    border-radius: 100px 0;
+    height: auto;
+    background-color: #5FC0CE;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.reservationContenaire h3 {
+    color: white;
+    font-size: 25px;
+}
+
+.reservationContenaire p {
+    color: white;
+    font-size: 19px;
+    margin-top: 1em;
+}
+
+.reservationContenaire #place {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & input {
+        max-width: 100px;
+    }
+
+    & label {
+        color: white;
+        font-size: 19px;
+        font-weight: 700;
+    }
+}
+
+.reservationContenaire button {
+    width: 250px;
+    font-size: 13px;
+    padding: 1em 2em;
+    background-color: #FF6B57;
+    color: white;
+    border-radius: 100px 0;
+    font-weight: 700;
+    border: none;
+    transition: all .15s;
+    margin-top: 2em;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: all .15s;
+    }
+}
+
+.divCancel {
+    text-align: center;
+}
+
+
+
+/* ///////////////dons paiement///////////////// */
+
+
+.paiementDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.donation-container {
+    border-radius: 100px 0;
+    width: 300px;
+    height: auto;
+    margin: 50px;
+}
+
+.mesCoordonnees {
+    border-radius: 100px 0;
+    width: 300px;
+    height: auto;
+    margin: 50px;
+}
+
+.header {
+    background-color: #325C5C;
+    color: white;
+    text-align: center;
+    border-radius: 100px 0 0 0;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.donation-options {
+    position: relative;
+    background: #ECECEC;
+    padding: 20px;
+    border-radius: 0 0 100px 0;
+}
+
+.option-group {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    border-radius: 100px 0;
+}
+
+
+
+.frequency {
+    background-color: #e6e6e6;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    /* border-radius: 100px 0; */
+    cursor: pointer;
+}
+
+.option {
+    width: 50%;
+    margin: 0;
+    border: solid #FF6B57 3px;
+
+    &:nth-of-type(1) {
+        background-color: #FF6B57;
+        border-radius: 100px 0 0 0;
+    }
+
+    &:nth-of-type(2) {
+        background-color: #FFF;
+        border-radius: 0 0 100px 0;
+    }
+}
+
+.amounts {
+    text-align: center;
+}
+
+.amount {
+    background-color: #FFF;
+    color: #FF6B57;
+    border: solid 2px #FF6B57;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 100px 0;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.custom-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.custom-amount input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-right: 5px;
+}
+
+.currency {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #e6e6e6;
+    border-radius: 25px;
 }
