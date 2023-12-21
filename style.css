@@ -393,7 +393,7 @@ select {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
+
     }
 }
 
@@ -1222,4 +1222,36 @@ table {
         transition: all .2s;
         cursor: pointer;
     }
+}
+
+#formAdmin {
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formAdmin input {
+    max-width: 40vw;
+}
+
+#formAdmin input[type='submit'] {
+    max-width: 20vw;
+    border: none;
+    background-color: #FF6B57;
+    color: #FFF;
+    font-size: 16px;
+    transition: all .2s;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all .2s;
+        cursor: pointer;
+    }
+}
+
+#formAdmin label {
+    font-size: 20px;
 }
