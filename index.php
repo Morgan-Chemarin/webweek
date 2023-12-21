@@ -68,7 +68,7 @@ include('presset/option.php');
 
     <div class="programmePart">
 
-        <div class="objectifPart">
+        <div class="objectifPart objectifPart2">
             <div class="objectif-container">
                 <div class="objectif-text">
                     Programme </div>
@@ -107,7 +107,7 @@ include('presset/option.php');
     </div>
 
     <div class="localisation">
-        <div class="objectifPart">
+        <div class="objectifPart objectifPart2">
             <div class="objectif-container">
                 <div class="objectif-text">
                     Venir </div>

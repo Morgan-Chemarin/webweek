@@ -19,7 +19,7 @@
     <div class="titre">
         <h1 class="h1">Gestion des inscriptions</h1>
     </div>
-    
+
     <?php
     include('presset/option.php');
 

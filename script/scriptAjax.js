@@ -59,6 +59,19 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // BOUTON DE DON PAGE DONS.PHP
+    $('#confirmerPaiement').click(function (event) {
+        let montantPaiement = $('#montantPaiement').val(); // Récupérer la valeur de l'input
+        $.ajax({
+            type: 'POST',
+            url: 'enregistrerDon.php',
+            data: { montantPaiement: montantPaiement }, // Utiliser la notation clé-valeur
+            success: function (data) {
+                window.location.href = 'index.php';
+            }
+        });
+    });
 })
 
 

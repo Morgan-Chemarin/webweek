@@ -41,6 +41,9 @@
     </div>
 
     <?PHP
+    include('presset/footer.php');
+        ?>
+    <?PHP
     include "poo/utilisateur.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -65,7 +65,7 @@ include('presset/header.php')
             <input type="email" placeholder="Email" id="mail" name="mail" required>
             <input type="password" name="password" id="password" placeholder="Mot de passe">
             <p id="mdpOublie"><a href="passwordforgot.php">Mot de passe oublié ?</a></p>
-            <input type="submit" value="Se connecter">
+            <input type="submit" value="Se connecter" id="btnSeconnecter">
             <p id="questionConnexion">Je n'ai pas de compte ? <a href="inscription.php">Inscription</a></p>
 
 

@@ -37,14 +37,16 @@
 
     <?php
     include('presset/option.php');
-    
+
     try {
         $query = "SELECT SUM(somme) AS total_dons FROM don";
         $result = $conn->query($query);
         if ($result) {
             $row = $result->fetch(PDO::FETCH_ASSOC);
             $totalDons = $row['total_dons'];
+            echo '<div class="centre">';
             echo "La somme totale des dons est : $totalDons €";
+            echo '</div>';
         } else {
             echo "La requête a échoué.";
         }
