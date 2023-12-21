@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La maison des adolescants</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script/scriptAjax.js"></script>
 </head>
 
 <body>
@@ -31,6 +33,27 @@
             association d'offrir des activités innovantes aux jeunes, en lien avec la technologie. Ensemble, créons des
             moments inoubliables et investissons dans l'avenir !</p>
     </div>
+
+
+    <?php
+    include('presset/option.php');
+    
+    try {
+        $query = "SELECT SUM(somme) AS total_dons FROM don";
+        $result = $conn->query($query);
+        if ($result) {
+            $row = $result->fetch(PDO::FETCH_ASSOC);
+            $totalDons = $row['total_dons'];
+            echo "La somme totale des dons est : $totalDons €";
+        } else {
+            echo "La requête a échoué.";
+        }
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+    ?>
+
+
     <div class="objectif-container">
         <div class="objectif-txt">
             <p>Faire un don</p>
@@ -101,43 +124,36 @@
         <div class="paiementDiv">
             <div class="donation-container">
                 <div class="header">
-                    <h1>1. Mon soutien</h1>
+                    <h1>1. Choisir combien</h1>
                 </div>
                 <div class="donation-options">
-                    <div class="option-group">
-                        <button class="option frequency">Je donne une fois</button>
-                        <button class="option frequency">Je donne tous les mois</button>
-                    </div>
-                    <div class="amounts">
-                        <button class="amount">25€</button>
-                        <button class="amount">50€</button>
-                        <button class="amount">75€</button>
-                        <button class="amount">100€</button>
-                    </div>
+
                     <div class="custom-amount">
-                        <input type="number" placeholder="Montant libre" />
+                        <input type="number" placeholder="Montant libre" id="montantPaiement" name="montantPaiement" />
                         <span class="currency">€</span>
                     </div>
                 </div>
             </div>
-            <div class="mesCoordonnees" style="display: : none;">
+            <div id="mesCoordonnees">
                 <div class="header">
-                    <h1>2. Mon soutien</h1>
+                    <h1>2. Mes coordonnées</h1>
                 </div>
                 <div class="donation-options">
-                    <div class="option-group">
-                        <button class="option frequency">Je donne une fois</button>
-                        <button class="option frequency">Je donne tous les mois</button>
+                    <input class="inputPaiement" type="text" name="" id="" placeholder="Adresse*">
+                    <input class="inputPaiement" type="text" name="" id="" placeholder="Adresse complémentaire">
+
+                    <div class="villeAdresse">
+                        <input class="inputPaiement" type="text" name="" id="" placeholder="Code postal*">
+                        <input class="inputPaiement" type="text" name="" id="" placeholder="Ville*">
                     </div>
-                    <div class="amounts">
-                        <button class="amount">25€</button>
-                        <button class="amount">50€</button>
-                        <button class="amount">75€</button>
-                        <button class="amount">100€</button>
-                    </div>
-                    <div class="custom-amount">
-                        <input type="number" placeholder="Montant libre" />
-                        <span class="currency">€</span>
+                    <select name="selectPays" id="selectPays">
+                        <option value="France">France</option>
+                        <option value="Espagne">Espagne</option>
+                        <option value="Angleterre">Angleterre</option>
+                    </select>
+
+                    <div class="centre">
+                        <button id="confirmerPaiement">Confirmer le paiement</button>
                     </div>
                 </div>
             </div>
@@ -146,24 +162,19 @@
     <?PHP } else {
         echo "Connectez-vous <a href='connexion.php'>Connexion</a>";
     }
-
-
     ?>
-
-    <?PHP
-    include('presset/footer.php')
-        ?>
-
+    <?PHP include('presset/footer.php') ?>
 </body>
 
 <script>
-    document.querySelectorAll('.donButton').forEach(button => {
-        button.addEventListener('click', function () {
-            console.log('Montant du don sélectionné:', this.getAttribute('data-amount'));
+    let inputMontant = document.getElementById('montantPaiement');
 
-            document.getElementById('mesCoordonnees').style.display = 'block';
-        });
+    inputMontant.addEventListener('input', function (event) {
+        console.log('Montant du don sélectionné:', event.target.value);
+
+        document.getElementById('mesCoordonnees').style.display = 'block';
     });
+
 </script>
 
 

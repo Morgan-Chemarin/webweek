@@ -80,7 +80,8 @@
     color: white;
 }
 
-input {
+input,
+select {
     padding: 1.1em 2em;
     margin: 1em 1.5em;
     background-color: white;
@@ -948,18 +949,21 @@ img {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .donation-container {
     border-radius: 100px 0;
-    width: 300px;
+    width: 330px;
     height: auto;
     margin: 50px;
 }
 
-.mesCoordonnees {
+#mesCoordonnees {
     border-radius: 100px 0;
-    width: 300px;
+    width: 330px;
     height: auto;
     margin: 50px;
+    display: none;
+    transition: all 1s;
 }
 
 .header {
@@ -1047,4 +1051,65 @@ img {
     padding: 10px 15px;
     background-color: #e6e6e6;
     border-radius: 25px;
+}
+
+.inputPaiement {
+    width: 85%;
+    border: #FF6B57 solid 2px;
+    background-color: #fff;
+    color: #FF6B57;
+
+    &::placeholder {
+        color: #BABABA;
+    }
+}
+
+.donation-options .villeAdresse {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#selectPays {
+    width: 85%;
+    padding: 1.1em 2em;
+    font-size: 16px;
+    font-family: 'OpenSans-Regular';
+    border: 2px solid #FF6B57;
+    color: #FF6B57;
+    appearance: none;
+}
+
+/* #selectPays {
+    background-image: url('path_to_your_arrow_icon.png'); 
+    background-repeat: no-repeat;
+    background-position: right 10px center; 
+    background-size: 12px;
+} */
+
+#selectPays option {
+    padding: 4px;
+    background: white;
+    color: #FF6B57;
+
+}
+
+#confirmerPaiement {
+
+    width: 85%;
+    padding: 1.1em 2em;
+    font-size: 16px;
+    border-radius: 100px 0;
+    font-family: 'OpenSans-Regular';
+    border: 2px solid #FF6B57;
+    color: #fff;
+    background-color: #FF6B57;
+    transition: all .2s;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all .2s;
+        cursor: pointer;
+    }
+    
 }
