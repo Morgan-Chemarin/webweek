@@ -6,6 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La maison des adolescants</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+
+        }
+
+        .carousel-slide {
+            display: inline-block;
+            width: 33.33%;
+        }
+
+        #slide1,
+        #slide2,
+        #slide3 {
+            width: 300px;
+            height: auto;
+            margin: 2em;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .carousel-nav img {
+            pointer-events: all;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin: 50px;
+        }
+    </style>
 </head>
 
 <body>
@@ -44,6 +87,9 @@
         </div>
     </div>
 
+    <style>
+        
+    </style>
     <div class="objectif-container">
         <div class="objectif-txt">
             <p>Stands partenaires</p>
@@ -52,6 +98,7 @@
             <div class="objectif-cercle"></div>
         </div>
     </div>
+
 
     <?PHP
     include('presset/option.php');
