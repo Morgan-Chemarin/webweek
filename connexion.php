@@ -22,12 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $id = $result['id_utilisateur'];
 
             if (password_verify($login_mdp, $hashed_password_from_db)) {
-                echo "Connexion réussie.";
                 $_SESSION['prenom'] = $prenom;
                 $_SESSION['id_utilisateur'] = $id;
 
-                header("Location: index.php");
-                exit;
+                header('Location: index.php');
+
             } else {
                 echo "<script>alert('Le mot de passe est incorrect')</script>";
 

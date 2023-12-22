@@ -1,3 +1,8 @@
+<?PHP
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,7 +18,7 @@
 <body>
     <?PHP
 
-    session_start();
+
     include('presset/header.php') ?>
 
     <div class="grayPart"></div>

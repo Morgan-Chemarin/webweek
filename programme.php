@@ -1,3 +1,7 @@
+<?PHP
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,13 +11,13 @@
     <title>La maison des adolescants</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        
+
     </style>
 </head>
 
 <body>
     <?PHP
-    session_start();
+
     include('presset/header.php') ?>
 
     <div class="grayPart"></div>
@@ -48,7 +52,7 @@
     </div>
 
     <style>
-        
+
     </style>
     <div class="objectif-container">
         <div class="objectif-txt">
