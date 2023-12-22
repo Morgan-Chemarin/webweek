@@ -25,18 +25,3 @@
     }
 </script>
 
-
-
-
-
-<!-- <nav class="nav-header">
-    <img src="images/logo.png" alt="" width="50px">
-    <div class="burger-menu" onclick="toggleMenu()">☰</div>
-    <ul class="ul-header">
-        <li class="li-header"><a href="index.php">Accueil</a></li>
-        <li class="li-header"><a href="programme.php">Programme</a></li>
-        <li class="li-header"><a href="inscriptionsoiree.php">Inscription Soirée</a></li>
-        <li class="li-header"><a href="dons.php">Don</a></li>
-       
-    </ul>
-</nav> -->

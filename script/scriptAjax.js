@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
             type: 'POST',
             url: 'deconnexion.php',
             success: function (data) {
+                alert('Deconnexion...')
                 window.location.href = 'index.php';
             }
         });
@@ -16,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
             type: 'POST',
             url: 'cancelReserv.php',
             success: function (data) {
+                alert('Inscription à la soirée annulée')
                 window.location.href = 'inscriptionsoiree.php';
             }
         });
@@ -55,6 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
             type: 'POST',
             url: 'suppression.php',
             success: function (data) {
+                alert('Compte supprimé')
                 window.location.href = 'index.php';
             }
         });
@@ -68,6 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
             url: 'enregistrerDon.php',
             data: { montantPaiement: montantPaiement }, // Utiliser la notation clé-valeur
             success: function (data) {
+                alert('Don enregistré ! Merci énormement')
                 window.location.href = 'index.php';
             }
         });

@@ -29,10 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: index.php");
                 exit;
             } else {
-                echo "Le mot de passe est incorrect.";
+                echo "<script>alert('Le mot de passe est incorrect')</script>";
+
             }
         } else {
-            echo "Aucun utilisateur trouvé avec cet e-mail.";
+            echo "<script>alert('Aucun utilisateur trouvé avec ce mail')</script>";
+
         }
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
@@ -75,7 +77,7 @@ include('presset/header.php')
 
     <?PHP
     include('presset/footer.php');
-        ?>
+    ?>
 
 
 </body>

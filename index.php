@@ -36,7 +36,7 @@ include('presset/option.php');
                 simplement à la recherche d'une soirée divertissante, "Ciel Étoilé" vous promet une expérience pour tous
                 les goûts. L'objectif de cette soirée lumineuse est de rassembler la communauté dans une atmosphère
                 chaleureuse et festive.</p>
-            <button id="btnProgramme">Voir le programme</button>
+            <button id="btnProgramme"><a href="programme.php">Voir le programme</a></button>
         </div>
         <img id="rectangle8" src="images/rectangle8.png" alt="">
     </div>

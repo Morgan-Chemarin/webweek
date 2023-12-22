@@ -42,7 +42,7 @@
 
     <?PHP
     include('presset/footer.php');
-        ?>
+    ?>
     <?PHP
     include "poo/utilisateur.php";
 
@@ -56,7 +56,7 @@
         $repassword = $_POST["repassword"];
 
         if ($password !== $repassword) {
-            echo "Les mots de passe ne correspondent pas.";
+            echo "<script>alert('Les mots de passe ne correspondent pas.')</script>";
             return;
         }
 
@@ -66,7 +66,7 @@
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
-            echo "L'adresse mail est deja utilisé par un autre compte.";
+            echo "<script>alert('L'adresse mail est deja utilisé par un autre compte.')</script>";
             return;
         }
 
@@ -76,7 +76,7 @@
         $utilisateur = new Utilisateur($nom, $prenom, $mail, $numero, $date_de_naissance, $mdp_hash);
         $utilisateur->enregistrer();
 
-        echo "Inscription réussie !";
+        echo "<script>alert('Inscription réussi !')</script>";
     }
     ?>
 
