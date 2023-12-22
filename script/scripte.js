@@ -24,9 +24,3 @@ function prevSlide() {
 
 // Initialisation
 updateSlideImages();
-
-// header
-function toggleMenu() {
-    var ulHeader = document.querySelector('.ul-header');
-    ulHeader.classList.toggle('show');
-}

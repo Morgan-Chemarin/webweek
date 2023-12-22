@@ -6,49 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La maison des adolescants</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .carousel-container {
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            justify-content: center;
-
-        }
-
-        .carousel-slide {
-            display: inline-block;
-            width: 33.33%;
-        }
-
-        #slide1,
-        #slide2,
-        #slide3 {
-            width: 300px;
-            height: auto;
-            margin: 2em;
-        }
-
-        .carousel-nav {
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            display: flex;
-            justify-content: space-between;
-            pointer-events: none;
-        }
-
-        .carousel-nav img {
-            pointer-events: all;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            margin: 50px;
-        }
-    </style>
 </head>
 
 <body>
@@ -87,70 +44,6 @@
         </div>
     </div>
 
-    <style>
-        .programmeContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .programmeSousContainer {
-            margin-bottom: 20px;
-        }
-
-        .box {
-            width: 300px;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #one {
-            border-radius: 200px 200px 0px 200px;
-            background: #5FC0CE;
-        }
-
-        #two {
-            background: #FFA857;
-        }
-
-        #three {
-            border-radius: 200px 200px 0px 200px;
-            background: #FF6B57;
-        }
-
-        #four {
-            border-radius: 200px;
-            background: #FF99C8;
-        }
-
-        #five {
-            background: #5FC0CE;
-        }
-
-        #six {
-            background: #FFA857;
-            border-radius: 0px 200px 200px 200px;
-            padding: 2em;
-        }
-
-        #seven {
-            border-radius: 200px;
-            background: #FF6B57;
-        }
-
-        #eight {
-            background: #FF99C8;
-        }
-
-
-        .margetext {
-            padding: 30px;
-        }
-    </style>
     <div class="objectif-container">
         <div class="objectif-txt">
             <p>Stands partenaires</p>
@@ -160,46 +53,73 @@
         </div>
     </div>
 
-
     <?PHP
-        // ici requete sql stand_present  
-        // result[0]['image_stand']
+    include('presset/option.php');
+
+    try {
+        $stmt = $conn->prepare("SELECT nom_stand, image_stand, bio_stand FROM stand_present");
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+    } catch (PDOException $e) {
+        echo 'Erreur :' . $e->getMessage();
+    }
+    // ici requete sql stand_present 
+    
+
     ?>
 
 
 
     <div class="programmeContainer">
         <div class="programmeSousContainer">
-            <div class="box" id="one"><img src="images/subway.png" alt="logo subway"></div>
+            <div class="box" id="one"><img src=" <?PHP echo $result[0]['image_stand']; ?>" alt="logo subway"></div>
             <div class="box" id="five">
-                <div class="margetext">Subway vous régalera en distribuant des cookies délicieusement irrésistibles, une
-                    façon savoureuse de célébrer le Nouvel An avec une touche sucrée et réconfortante.</div>
+                <div class="margetext">
+                    <?PHP echo $result[0]['bio_stand']; ?>
+                </div>
             </div>
         </div>
         <div class="programmeSousContainer">
             <div class="box" id="two">
-                <img src="images/saloncyrano.png" alt="logo saloncyrano">
+                <img src=" <?PHP echo $result[1]['image_stand']; ?>" alt="logo saloncyrano">
             </div>
             <div class="box" id="six">
-                <div class="images/margetext">Le stand vous propose une sélection exquise de petits gâteaux spécialement
-                    conçus pour célébrer le Nouvel An.</div>
+                <div class="images/margetext">
+                    <?PHP echo $result[1]['bio_stand']; ?>
+                </div>
             </div>
         </div>
         <div class="programmeSousContainer">
-            <div class="box" id="three"><img src="images/ptitespepites.png" alt="logo ptitespepites"></div>
+            <div class="box" id="three"><img src=" <?PHP echo $result[2]['image_stand']; ?>" alt="logo ptitespepites">
+            </div>
             <div class="box" id="seven">
-                <div class="margetext">Stands de souvenirs exclusifs mettant en avant les beautés et les symboles de la
-                    ville.</div>
+                <div class="margetext">
+                    <?PHP echo $result[2]['bio_stand']; ?>
+                </div>
             </div>
         </div>
         <div class="programmeSousContainer">
-            <div class="box" id="four"><img src="images/atelierdesetoiles.png" alt="logo atelierdesetoiles"></div>
+            <div class="box" id="four"><img src=" <?PHP echo $result[3]['image_stand']; ?>"
+                    alt="logo atelierdesetoiles"></div>
             <div class="box" id="eight">
-                <div class="margetext">Atelier de fabrication de lanternes animé par des artisans locaux, mettant en
-                    avant les talents créatifs de la région.</div>
+                <div class="margetext">
+                    <?PHP echo $result[3]['bio_stand']; ?>
+                </div>
             </div>
         </div>
+
+
+
+
+
     </div>
+    <div class="centre">
+        <button id="voirInscription"><a href="inscriptionsoiree.php">Je m'inscrit !</a></button>
+    </div>
+
     <?PHP include('presset/footer.php') ?>
 </body>
 
