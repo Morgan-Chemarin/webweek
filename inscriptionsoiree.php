@@ -78,7 +78,8 @@ session_start();
         } else {
             $inscription_soiree = new Soiree($id_utilisateur, $nombre_de_place);
             $inscription_soiree->enregistrer();
-            header('Location: apresinscription.php');
+            // header('Location: apresinscription.php');
+            echo "<script>alert('Inscription à la soirée réussi !');</script>";
             exit;
         }
 
@@ -87,6 +88,7 @@ session_start();
     if (!empty($error)) {
         echo "<script>alert(" . json_encode($error) . "); </script>";
     }
+
 
     ?>
 </body>

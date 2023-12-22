@@ -128,7 +128,7 @@ session_start();
 
     </div>
     <div class="centre">
-        <button id="voirInscription"><a href="inscriptionsoiree.php">Je m'inscrit !</a></button>
+        <button id="voirInscription"><a href="inscriptionsoiree.php">Je m'inscris !</a></button>
     </div>
 
     <?PHP include('presset/footer.php') ?>

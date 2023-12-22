@@ -1,4 +1,4 @@
-<link rel="icon" type="image/png" href="images/logo.ico">
+<link rel="icon" type="image/png" href="../images/logo.ico">
 
 <header class="headerResponsive">
     <div class="total">
