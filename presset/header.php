@@ -1,3 +1,5 @@
+<link rel="icon" type="image/png" href="images/logo.ico">
+
 <header class="headerResponsive">
     <div class="total">
         <a href="index.php"><img src="images/logo.png" alt="" width="50px"></a>
@@ -24,4 +26,3 @@
         navLinks.classList.toggle('show');
     }
 </script>
-
