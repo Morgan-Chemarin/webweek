@@ -45,18 +45,6 @@ INSERT INTO `don` (`id_don`, `id_utilisateur`, `somme`, `date`) VALUES
 (6, 100, 23.00, '0000-00-00'),
 (7, 101, 23.00, '0000-00-00');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `feedback`
---
-
-CREATE TABLE `feedback` (
-  `id_feedback` int(11) NOT NULL,
-  `id_utilisateur` int(11) DEFAULT NULL,
-  `commentaire` text DEFAULT NULL,
-  `date_poste` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
